@@ -1,148 +1,269 @@
 body {
-  background-image: url("agnieszka-stankiewicz-XoRcgUnX13A-unsplash copy.jpg");
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  font-family: Arial, sans-serif; 
+  font-family: 'Plantagenet Cherokee';
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+  overflow-x: hidden;
 }
 
-#Intro {
-  color: 0c4234;
-  text-align: center;
+.banner-image {
+  width: 1500px;
+  height: 300px;
+  border-bottom: 2px solid #eee;
+  display: block;
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.header-title {
+  margin-top: 85px; 
+  font-family: 'UnifrakturMaguntia';
+  color: #333;
+  font-size: 50px;
+  margin-left: 50px; 
+}
+
+.header-gif {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 80px;
+  top: -75px; 
+  z-index: 10; 
 }
 
 .top-nav {
-  background-color: #f4f4f4;
-  padding: 10px 20px;
-  text-align: center;
-  margin-top: -20px;
-  margin-bottom: 40px;
-}
-        .top-nav a {
-          margin: 50px; 
-          text-decoration: none;
-          color: #333;
-          font-weight: bold;
-          font-family: Merriweather;
-        }
-
-        .top-nav a:hover {
-          color: #0077cc;
-        }
-
-.SiteTittle {
-	margin-top: 30px;
-	text-align: center;
-	font-family: UnifrakturCook;
-	font-size: 40px;
-  color:0c4234;
-}
-        .Secondtitle h2 {
-          max-width: 860px;
-          font-family: UnifrakturMaguntia;
-          font-size: 30px;
-          margin: 0 auto; 
-          text-align: left;
-          line-height: 1.6;
-          color: 0c4234;
-          margin-bottom: 10px
-        }
-
-        .Secondtitle p {
-          max-width: 860px;
-          font-family: Merriweather;
-          font-size: 16px;
-          margin: 0 auto; 
-          text-align: left;
-          line-height: 1.6;
-          color: whitesmoke;
-        }
-
-.bookshelf {
-  text-align: center;
-  padding: 40px 10px;
-  background-color: rgba(232, 232, 232, 0.6);
-  /*background-color: ##e8e8e8;*/
-  margin: 40px auto;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-}
-
-.bookshelf h2 {
-  font-family: UnifrakturMaguntia;
-  font-size: 25px;
-  color: 0c4234;
-  margin-top: 5px ;
-}
-
-.book-display {
   display: flex;
-  justify-content: center; /* center the books */
-  gap: 40px; /* spacing between books */
-  margin-top: 20px;
-  flex-wrap: wrap; /* wraps on small screens */
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.book {
-  width: 150px;
-  text-align: center;
-  font-family: Arial, sans-serif;
+.top-nav a {
+  font-family: 'UnifrakturMaguntia';
+  font-size: 18px;
+  color: #666;
+  padding: 12px 20px;
+  margin: 0 50px; 
+  margin-top: 40px;
 }
 
-.book p {
-  margin-top: 5px;
-  margin: 5px 0;
-  font-size: 13px;
-}
-.book img {
-  margin-bottom: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+.top-nav a:hover {
+  background-color: #f3f3f3;
+  color: #333;
 }
 
-.SeriesList {
-	max-width: 800px; 
- 	margin: 0 auto;   
-  padding: 10px;   
-  line-height: 1.6;
-  font-size: 20px;
-  font-family: italic;
-  color:whitesmoke;
-}
-
-.SeriesList h3 {
-	font-family: UnifrakturMaguntia;
-	font-size: 25px;
-}
-
-.Table {
-   
-  margin-bottom: 80px;
+.three-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
   padding: 40px 20px;
-  background-color: rgba(232, 232, 232, 0.6);
-  /*background-color: #fefae0;*/
-  margin: 10px auto;
-  max-width: 900px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  max-width: 100%;
 }
 
-.table h2 {
-  margin-top: -10px;
-  font-family:UnifrakturMaguntia;
-  font-size: 30px;
+.three-section > div {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-height: 300px;
+}
+
+.three-section h3 {
+  font-family:  'UnifrakturMaguntia';
+  font-size: 25px;
+  color: #891715;
+  margin-bottom: 15px;
   text-align: center;
-  color: 0c4234;
-
+  font-weight: 600;
 }
 
-.table table{
-	font-family: arial;
+.currently-reading ul {
+  list-style: none;
+  padding: 0;
+}
+
+.currently-reading li {
+  margin-bottom: 10px;
+  padding: 15px;
+  border-left: 3px solid black;
+  transition: background-color;
+}
+
+.currently-reading li:hover {
+  background-color: #f0f0f0;
+}
+
+.book-title {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.book-author {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+}
+
+.quote {
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-content {
+  padding: 25px 25px;
+  border-left: 3px solid black;
+  margin-top: 45px; 
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 25px;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.quote-author {
+  font-weight: 500;
+  color: #666;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.man {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.man img {
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 1px solid #ddd;
+}
+
+.man-name {
+  font-weight: 500;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.man-role {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.man-quote {
+  font-style: italic;
+  font-size:15px;
+  line-height: 1.4;
+  color: #555;
+  background-color: #f8f8f8;
+  padding: 12px;
+  border-left: 3px solid black;
+}
+
+.faves-section {
+  padding: 20px 20px;
+  background-color: white;
+  max-width: 100%;
+}
+
+.faves-title {
+  font-family: 'UnifrakturMaguntia';
+  text-align: center;
+  font-size: 40px;
+  color: #891715;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.faves-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fave-column h3 {
+  font-family: 'UnifrakturMaguntia';
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #555;
+  border-bottom: 1px solid #bb5756;
+  padding-bottom: 5px;
+}
+
+.fave-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 15px;
-  color: 0c4234;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
+.fave-item:hover {
+  background-color: #f3f3f3;
 }
 
 
+@media (max-width: 768px) {
+  .three-section {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+  }
 
+  .header-top {
+    padding: 10px 20px;
+  }
+
+  .top-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .top-nav a {
+    padding: 12px 15px;
+    font-size: 18px;
+  }
+
+  .faves-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .faves-section {
+    padding: 40px 15px;
+  }
+
+  .banner-image {
+    height: 150px;
+  }
+}
