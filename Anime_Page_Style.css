@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header_GIF {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-banner {
+  width: 100vw;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.corner-gif {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  width: 120px;
+  height: auto;
+  z-index: 2;
+}
+
+h1 {
+  text-align: left;
+  margin: 50px;
+  font-size: 35px;
+  font-family: 'UnifrakturMaguntia';
+  font-weight: 400;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.column {
+  flex: 1;
+}
+
+.column-left {
+  max-width: 250px;
+}
+
+.column-middle {
+  flex: 2;
+}
+
+.column-right {
+  max-width: 250px;
+  padding: 20px;
+}
+
+.column-left section {
+  margin-bottom: 25px;
+}
+
+.section-heading {
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: black;
+  font-size: 1.2rem;
+  font-family: 'UnifrakturMaguntia';
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.purple {
+  background-color: lavender;
+}
+
+.orange {
+  background-color: lightcoral;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.content-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.content-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: black;
+}
+
+.add-anime-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-anime-btn img {
+  width: 24px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.add-anime-btn:hover {
+  background: #f0f0f0;
+}
+
+.anime-form-container {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.anime-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.anime-form-container input, .anime-form-container select {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.column-middle {
+  padding: 20px;
+}
+
+.section-title {
+  font-family: 'UnifrakturMaguntia';
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.anime-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.anime-box {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  width: calc(33.33% - 10px);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.anime-box: hover {
+  background-color: #f5f5f5;
+}
+
+.anime-details-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fafafa;
+  display: none;
+}
+
+.anime-detail {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.anime-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.anime-info-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px 15px;
+  align-items: center;
+}
+
+.info-label {
+  color: gray;
+  font-weight: bold;
+}
+
+.info-value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: black;
+  background-color: #eee;
+}
+
+.tag-blue { background-color: #cce4ff; }
+.tag-green { background-color: #d2f8d2; }
+.tag-gray { background-color: #e0e0e0; }
+.tag-pink { background-color: #fddde6; }
+.tag-yellow { background-color: #fff8cc; }
+.tag-lavender { background-color: #e6e6fa; }
+.tag-red { background-color: #ffcdd2; }
+.tag-orange {background-color: lightcoral;}
+
+.anime-detail {
+  display: none;
+}
+
+.best-scenes img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tiny-gif {
+  display: block;
+  margin: 20px auto 10px;
+  width: 200px;
+  height: 100px;
+}
+
+.sticky-note {
+  background-color: #fff8a3;
+  color: #333;
+  padding: 15px;
+  margin: 10px auto;
+  border: 1px solid #e0c000;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 80%;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-series-section {
+  margin-top: 40px;
+}
+
+.top-series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.series-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.series-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.series-title {
+  margin-top: 10px;
+  font-weight: bold;
+  font-family: 'UnifrakturMaguntia';
+  font-size: 1rem;
+}
+
+.top-series-section {
+  background-color: #fefefe;
+  padding: 40px 20px;
+}
+
+.top-movies-section {
+  margin-top: 40px;
+}
+
+.top-movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.movies-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movies-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.movies-title {
+  margin-top: 10px;
+  font-weight: bold;
+  font-family: 'UnifrakturMaguntia';
+  font-size: 1rem;
+}
+
+.top-movies-section {
+  background-color: #fefefe;
+  padding: 40px 20px;
+}

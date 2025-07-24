@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies Dashboard</title>
+  <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+
+  <div class="banner">
+    <img src="Banner.gif" alt="Cinema Banner" class="banner-img">
+    <img src="Heart.webp" alt="TV Icon" class="gif-icon">
+  </div>
+
+  <h1>Movies</h1>
+
+ <h2>Best Quote</h2>
+  <div id="quote-box" onclick="editQuote()">"Did my heart love till now? Forswear its sight. For I never saw true beauty 'til this night."</div>
+
+  <script>
+    function editQuote() {
+      const box = document.getElementById("quote-box");
+      const input = document.createElement("input");
+      input.type = "text";
+      input.value = box.innerText.replace(/"/g, '');
+      input.className = "quote-input";
+
+      box.replaceWith(input);
+      input.focus();
+
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          const newBox = document.createElement("div");
+          newBox.id = "quote-box";
+          newBox.className = "quote-box";
+          newBox.innerText = `"${input.value}"`;
+          newBox.onclick = editQuote;
+          input.replaceWith(newBox);
+        }
+      });
+    }
+  </script>
+<br>
+
+  <div class="sidebar">
+
+    <div class="section-box peach">
+      <h2>Content</h2>
+      <ul>
+        <li>📺 Shows</li>
+        <li>🗂 Master List - Shows</li>
+        <li>🎬 Movies</li>
+        <li>⭐ Man of the Month</li>
+      </ul>
+    </div>
+
+    <div class="section-box mint">
+      <h2>Quick Actions</h2>
+      <button>Add Movie</button>
+      <button>Add Show</button>
+      <button>Man of the Month</button>
+    </div>
+
+    <div class="section-box blue">
+      <h2>Rating System</h2>
+      <ul>
+        <li>★★★★★: so good</li>
+        <li>★★★★☆: died</li>
+        <li>★★★☆☆: it's okay</li>
+        <li>★★☆☆☆: struggled</li>
+        <li>★☆☆☆☆: never again</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="main-section">
+    <script>
+    function showDetails(title, description) {
+        alert(title + "\n\n" + description);
+    }
+    </script>
+
+    <h2 class="orange-header">Want to Watch</h2>
+    <div class="grid">
+      <div class="card" onclick="showDetails('Sinners','Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.')">
+        <img src="sinners.jpg" alt="Sinners">
+        <p>Sinners</p>
+      </div>
+      <div class="card" onclick="showDetails('How To Train Your Dragon','As an ancient threat endangers both Vikings and dragons alike on the isle of Berk, the friendship between Hiccup, an inventive Viking, and Toothless, a Night Fury dragon, becomes the key to both species forging a new future together.')">
+        <img src="dragon.jpg" alt="How To Train Your Dragon">
+        <p>How To Train Your Dragon</p>
+      </div>
+      <div class="card" onclick="showDetails('Superman','Superman must reconcile his alien Kryptonian heritage with his human upbringing as reporter Clark Kent. As the embodiment of truth, justice and the human way he soon finds himself in a world that views these as old-fashioned.')">
+        <img src="superman.jpg" alt="Superman">
+        <p>Superman</p>
+      </div>
+      <div class="card" onclick="showDetails('The Wild Robot','After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the islands animals and cares for an orphaned baby goose.')">
+        <img src="wild.jpg" alt="Robot">
+        <p>The Wild Robot</p>
+      </div>
+      <div class="card" onclick="showDetails('The French Dispatch','A collection of stories published in The French Dispatch Magazine comes to life in a fictional twentieth century French city.')">
+        <img src="french.jpg" alt="The French Dispatch">
+        <p>The French Dispatch</p>
+      </div>
+    </div>
+
+
+    <h2 class="green-header">Top Five – Movies</h2>
+    <div class="grid">
+      <div class="card" onclick="showDetails('Kpop Demon Hunters', 'A world-renowned K-Pop girl group balance their lives in the spotlight with their secret identities as demon hunters.')">
+        <img src="kpop.gif" alt="Kpop Demon Hunters">
+        <p>KPop Demon Hunters ★★★★★</p>
+      </div>
+      <div class="card" onclick="showDetails('Harry Potter and the Sorcerers Stone', 'An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.')">
+        <img src="harry1.gif" alt="Harry Potter and the Sorcerers Stone">
+        <p>Harry Potter and the Sorcerer's Stone  ★★★★★</p>
+      </div>
+      <div class="card" onclick="showDetails('Harry Potter and the Prisoner of Azkaban', 'Harry Potter, Ron and Hermione return to Hogwarts School of Witchcraft and Wizardry for their third year of study, where they delve into the mystery surrounding an escaped prisoner who poses a dangerous threat to the young wizard.')">
+        <img src="harry3.gif" alt="Harry Potter and the Prisoner of Azkaban">
+        <p>Harry Potter and the Prisoner of Azkaban  ★★★★★</p>
+      </div>
+      <div class="card" onclick="showDetails('Pride and Prejudice', 'When Elizabeth Bennet meets the handsome Mr. Darcy, she believes he is the last man she could ever marry, but as their lives become intertwined, she finds herself captivated by the man she has sworn to hate forever.')">
+        <img src="pride.gif" alt="Pride and Prejudice">
+        <p>Pride and Prejudice ★★★★☆</p>
+      </div>
+      <div class="card" onclick="showDetails('Romeo and Juliet', 'Shakespeares famous play is updated to the hip modern suburb of Verona still retaining its original dialogue.')">
+        <img src="romeo.gif" alt="Romeo and Juliet">
+        <p>Romeo and Juliet ★★★★☆</p>
+        <p

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Anime Tracker</title>
+  <link rel = "stylesheet" type = "text/css" href = "Anime_Page_Style.css">
+  <link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="HTML, MDM">
+</head>
+
+<header class="header_GIF">
+  <img src="Images_GIFs/1_Header_GIF.gif" alt="Anime Banner" class="main-banner">
+  <img src="Images_GIFs/2_one_piece_pixel.gif" alt="Corner GIF" class="corner-gif">
+</header>
+
+<body>
+  <h1>My Anime Tracker</h1>
+
+<main class="main-content">
+  <aside class="column column-left">
+    <section class="content-section">
+     <h3 class="section-heading purple">Content</h3>
+
+     <div class="content-item">
+      <img src="Images_GIFs/content_bullet1.gif" alt="Currently Watching">
+      <p>Currently Watching</p>
+    </div>
+
+    <div class="content-item">
+      <img src="Images_GIFs/content_bullet2.gif" alt="Best Scenes">
+      <p>Best Scenes</p>
+    </div>
+
+    <div class="content-item">
+      <img src="Images_GIFs/content_bullet3.gif" alt="Top 6 Series">
+      <p>Top 6 Series</p>
+    </div>
+
+    <div class="content-item">
+      <img src="Images_GIFs/content_bullet4.gif" alt="Top 6 Movies">
+      <p>Top 6 Movies</p>
+    </div>
+    </section>
+
+    <section class="quick-actions">
+      <h3 class="section-heading orange">Quick Actions</h3>
+      <button id="addAnimeBtn" class="add-anime-btn">
+        <img src="Images_GIFs/button_image.jpg" alt="Add Anime Icon"> Add Anime</button>
+
+    <div id = "animeFormContainer" class="anime-form-container">
+      <form id="animeForm">
+        <h4>Add a New Anime</h4>
+
+        <label for="animeName">Anime Title:</label>
+        <input type="text" id="animeName" name="animeName" required>
+
+        <label for="episodes">Episodes Watched</label>
+        <input type="number" id="episodes" name="episodes">
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating">
+          <option value="">Choose one</option>
+          <option value="9-10">★ 9–10: died</option>
+          <option value="7-8">★ 7–8: so good</option>
+          <option value="5-6">★ 5–6: it’s okay</option>
+          <option value="3-4">★ 3–4: struggled</option>
+          <option value="1-2">★ 1–2: never again</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    </section>
+
+    <section class="rating-system">
+      <h3 class="section-heading green">Rating System</h3>
+      <div class="rating-system">
+        <p> ★ 9–10: died </p>
+        <p>★ 7–8: so good</p>
+        <p>★ 6–5: it’s okay</p>
+        <p>★ 4–3: struggled</p>
+        <p>★ 2–1: never again</p>
+      </div>
+    </section>
+
+    <section class="language-options">
+      <h3 class="section-heading blue">Language</h3>
+      <div class="language-options">
+        <p>English/Japenese</p>
+        <p>Japenese</p>
+      </div>
+    </section>
+  </aside>
+
+  <section class="column column-middle">
+    <h2 class="section-title">Currently Watching</h2>
+
+    <div class="anime-grid">
+      <div class="anime-box" data-anime="dandadan">Dandadan</div>
+      <div class="anime-box" data-anime="blue-exorcist">Blue Exorcist</div>
+      <div class="anime-box" data-anime="dr-stone">Dr. Stone</div>
+      <div class="anime-box" data-anime="one-piece">One Piece</div>
+      <div class="anime-box" data-anime="jujutsu-kaisen">Jujutsu Kaisen</div>
+      <div class="anime-box" data-anime="bleach">Bleach</div>
+      <div class="anime-box" data-anime="blue-lock">Blue Lock</div>
+      <div class="anime-box" data-anime="saiki-k">Saiki K.</div>
+      <div class="anime-box" data-anime="spy-x-family">Spy X Family</div>
+      <div class="anime-box" data-anime="classroom-of-the-elite">Classroom of the Elite</div>
+      <div class="anime-box" data-anime="kuroko-basketball">Kuroko's Basketball</div>
+      <div class="anime-box" data-anime="bungou-stray-dogs">Bungou Stray Dogs</div>
+      <div class="anime-box" data-anime="black-butler">Black Butler</div>
+      <div class="anime-box" data-anime="from-me-to-you">From Me To You</div>
+      <div class="anime-box" data-anime="highschool-dxd">Highschool DXD</div>
+      <div class="anime-box" data-anime="march-comes-in-like-a-lion">March Comes in Like a Lion</div>
+    </div>
+
+    <img src="Images_GIFs/column_2_small_gif.gif" alt="Reminder GIF" class="tiny-gif">
+
+    <div class="sticky-note">
+      Reminder: Watch Bleach!
+    </div>
+
+    <div id="animeDetails" class="anime-details-box"></div>
+
+    <div class="anime-detail" id="dandadan">
+      <h3 class="anime-title">Dandadan</h3>
+
+      <div class="anime-info-grid">
+        <div class="info-label">Personal Status:</div>
+        <div class="info-value status">Watching</div>
+
+        <div class="info-label">Episode:</div>
+        <div class="info-value">Season 1/Ep. 12</div>
+
+        <div class="info-label">Genre:</div>
+        <div class="info-value">
+          <span class="tag tag-blue">Shonen</span>
+          <span class="tag tag-green">Romance</span>
+          <span class="tag tag-gray">Mystery</span>
+          <span class="tag tag-pink">Drama</span>
+          <span class="tag tag-yellow">Supernatural</span>
+          <span class="tag tag-lavender">Comedy</span>
+        </div>
+
+        <div class="info-label">Links:</div>
+        <div class="info-value">Netflix</div>
+
+        <div class="info-label">Rating</div>
+        <div class="info-value tag tag-red">10/10</div>
+
+        <div class="info-label">Status:</div>
+        <div class="info-value tag tag-blue">Ongoing</div>
+
+      </div>
+    </div>
+
+    <div class="anime-detail" id="blue-exorcist">
+      <h3 class="anime-title">Blue Exorcist</h3>
+
+      <div class="anime-info-grid">
+        <div class="info-label">Personal Status:</div>
+        <div class="info-value status">Watching</div>
+
+        <div class="info-label">Episode:</div>
+        <div class="info-value">Season 2/Ep. 12</div>
+
+        <div class="info-label">Genre:</div>
+        <div class="info-value">
+          <span class="tag tag-blue">Shonen</span>
+          <span class="tag tag-red">Fantasy</span>
+        </div>
+
+        <div class="info-label">Links:</div>
+        <div class="info-value">Netflix</div>
+
+        <div class="info-label">Rating</div>
+        <div class="info-value tag tag-red">10/10</div>
+
+        <div class="info-label">Status:</div>
+        <div class="info-value tag tag-orange">Completed</div>
+
+      </div>
+
+    </div>
+
+        <div class="anime-detail" id="dr-stone">
+      <h3 class="anime-title">Dr. Stone</h3>
+
+      <div class="anime-info-grid">
+        <div class="info-label">Personal Status:</div>
+        <div class="info-value status">Watching</div>
+
+        <div class="info-label">Episode:</div>
+        <div class="info-value">Season 1/Ep. 24</div>
+
+        <div class="info-label">Genre:</div>
+        <div class="info-value">
+          <span class="tag tag-blue">Shonen</span>
+          <span class="tag tag-red">Fantasy</span>
+        </div>
+
+        <div class="info-label">Links:</div>
+        <div class="info-value">Netflix</div>
+
+        <div class="info-label">Rating</div>
+        <div class="info-value tag tag-red">10/10</div>
+
+        <div class="info-label">Status:</div>
+        <div class="info-value tag tag-orange">Returning</div>
+
+      </div>
+
+    </div>
+
+    <div class="anime-detail" id="one-piece">
+      <h3 class="anime-title">One Piece</h3>
+
+      <div class="anime-info-grid">
+        <div class="info-label">Personal Status:</div>
+        <div class="info-value status">Watching</div>
+
+        <div class="info-label">Episode:</div>
+        <div class="info-value">Ep. 924</div>
+
+        <div class="info-label">Genre:</div>
+        <div class="info-value">
+          <span class="tag tag-blue">Shonen</span>
+        </div>
+
+        <div class="info-label">Links:</div>
+        <div class="info-value">Netflix</div>
+
+        <div class="info-label">Rating</div>
+        <div class="info-value tag tag-red">10/10</div>
+
+        <div class="info-label">Status:</div>
+        <div class="info-value tag tag-blue">Ongoing</div>
+
+      </div>
+
+    </div>
+
+    <div class="anime-detail" id="jujutsu-kaisen">
+      <h3 class="anime-title">Jujutsu Kaisen</h3>
+
+      <div class="anime-info-grid">
+        <div class="info-label">Personal Status:</div>
+        <div class="info-value status">Watching</div>
+
+        <div class="info-label">Episode:</div>
+        <div class="info-value">Season 2/Ep. 21</div>
+
+        <div class="info-label">Genre:</div>
+        <div class="info-value">
+          <span class="tag tag-blue">Shonen</span>
+          <span class="tag tag-red">Fantasy</span>
+        </div>
+
+        <div class="info-label">Links:</div>
+        <div class="info-value">Netflix</div>
+
+        <div class="info-label">Rating</div>
+        <div class="info-value tag tag-red">10/10</div>
+
+        <div class="info-label">Status:</div>
+        <div class="info-value tag tag-blue">Ongoing</div>
+
+      </div>
+
+    </div>
+
+    <div class="anime-detail" id="bleach">
+      <h3 class="anime-title">Bleach</h3>
+
+      <div class="anime-info-grid">
+        <div class="info-label">Personal Status:</div>
+        <div class="info-value status">Watching</div>
+
+        <div class="info-label">Episode:</div>
+        <div class="info-value">Season 1/Ep. 65</div>
+
+        <div class="info-label">Genre:</div>
+        <div class="info-value">
+          <span class="tag tag-blue">Shonen</span>
+        </div>
+
+        <div class="info-label">Links:</div>
+        <div class="info-value">Netflix</div>
+
+        <div class="info-label">Rating</div>
+        <div class="info-value tag tag-red">9/10</div>
+
+        <div class="info-label">Status:</div>
+        <div class="info-value tag tag-blue">Ongoing</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="column column-right">
+  <h2 class="section-title">Best Scenes</h2>
+
+  <div class="best-scenes">
+    <img src="Images_GIFs/best_scene_1.gif" alt="Best Scene 1">
+    <img src="Images_GIFs/best_scene_2.gif" alt="Best Scene 2">
+    <img src="Images_GIFs/best_scene_3.gif" alt="Best Scene 3">
+    <img src="Images_GIFs/best_scene_4.gif" alt="Best Scene 4">
+  </div>
+  </section>
+
+    
+  </section>
+</main>
+
+<section class="top-series-section">
+  <h2 class="section-title">Top 6 - Series</h2>
+
+  <div class="top-series-grid">
+    <div class="series-box">
+      <img src="Images_GIFs/top_series_1.gif" alt="Top Series 1">
+      <p class="series-title">One Piece</p>
+    </div>
+
+    <div class="series-box">
+      <img src="Images_GIFs/top_series_2.gif" alt="Top Series 2">
+      <p class="series-title">Naruto Shippuden</p>
+    </div>
+
+        <div class="series-box">
+      <img src="Images_GIFs/top_series_3.gif" alt="Top Series 3">
+      <p class="series-title">Attack on Titans</p>
+    </div>
+
+        <div class="series-box">
+      <img src="Images_GIFs/top_series_4.gif" alt="Top Series 4">
+      <p class="series-title">Violet Evergarden</p>
+    </div>
+
+        <div class="series-box">
+      <img src="Images_GIFs/top_series_5.gif" alt="Top Series 5">
+      <p class="series-title">Banana Fish</p>
+    </div>
+
+        <div class="series-box">
+      <img src="Images_GIFs/top_series_6.gif" alt="Top Series 6">
+      <p class="series-title">The Apothecary Diaries</p>
+    </div>
+
+  </div>
+</section>
+
+  </section>
+</main>
+
+<section class="top-movies-section">
+  <h2 class="section-title">Top 6 - Movies</h2>
+
+  <div class="top-movies-grid">
+    <div class="movies-box">
+      <img src="Images_GIFs/top_movies_1.gif" alt="Top Movies 1">
+      <p class="movies-title">Violet Evergarden: the Movie</p>
+    </div>
+
+    <div class="movies-box">
+      <img src="Images_GIFs/top_movies_2.gif" alt="Top Movies 2">
+      <p class="movies-title">I Want to Eat Your Pancreas</p>
+    </div>
+
+        <div class="movies-box">
+      <img src="Images_GIFs/top_movies_3.gif" alt="Top Movies 3">
+      <p class="movies-title">Howls Moving Castle</p>
+    </div>
+
+        <div class="movies-box">
+      <img src="Images_GIFs/top_movies_4.gif" alt="Top Movies 4">
+      <p class="movies-title">My Hero Academia: Heroes Rising</p>
+    </div>
+
+        <div class="movies-box">
+      <img src="Images_GIFs/top_movies_5.gif" alt="Top Movies 5">
+      <p class="movies-title">Princess Mononoke</p>
+    </div>
+
+        <div class="movies-box">
+      <img src="Images_GIFs/top_movies_6.gif" alt="Top Movies 6">
+      <p class="movies-title">Colourful</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+
+<script>
+  const addAnimeBtn = document.getElementById("addAnimeBtn");
+  const formContainer = document.getElementById ("animeFormContainer");
+
+  addAnimeBtn.addEventListener("click", ()=> {
+    if (formContainer.style.display==="none" || formContainer.style.display === "") {formContainer.style.display = "block";}
+    else {
+      formContainer.style.display = "none";
+    }
+  });
+
+  document.getElementById("animeForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Anime added! (You can customize this later)");
+    this.reset();
+    formContainer.style.display = "none";
+  });
+
+  const animeBoxes = document.querySelectorAll('.anime-box');
+  const allDetails = document.querySelectorAll('.anime-detail');
+
+  animeBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+      const animeId = box.dataset.anime;
+
+      allDetails.forEach(detail => {
+        if (detail.id === animeId) {
+          detail.style.display = (detail.style.display === "block") ? "none" : "block";
+        } else {
+          detail.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
