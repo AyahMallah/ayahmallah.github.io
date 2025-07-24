@@ -1,0 +1,374 @@
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #ffffff;
+  color: #3d2914;
+  line-height: 1.5;
+}
+:root {
+  --accent-pink: #f06595;
+  --accent-brown: #8a365b;
+  --accent-violet: #845ec2;
+  --text-light: #fff;
+  --bg-sidebar: #fff;
+  --bg-content: rgba(250, 248, 245, 0.8);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+.header {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gif-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  width: 100px;
+  transition: transform 0.2s;
+}
+
+.main-container {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+}
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--shadow);
+  position: sticky;
+  top: 24px;
+}
+.sidebar h1 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 10 rem;
+  margin-bottom: 16px;
+  text-align: start;
+  color: var(--accent-brown);}
+
+  .sidebar h2 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      text-align: start;
+      color: var(--accent-brown);
+  }
+  .sidebar-section {
+      margin-bottom: 32px;
+  }
+  .sidebar-section h3 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: var(--accent-brown);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+  .sidebar-section ul {
+      list-style: none;
+  }
+  .sidebar-section li {
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      background: rgba(245, 240, 235, 0.8);
+      border-radius: 5px;
+      cursor: pointer;
+      border-left: 3px solid var(--accent-brown);
+      transition: transform 0.3s ease;
+  }
+  .sidebar-section li:hover {
+      transform: translateX(5px);
+  }
+    a {
+      text-decoration: none;
+      color: inherit;
+  }
+  a:hover,
+  a:focus {
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+  }
+  .rating-system div {
+      padding: 6px 10px;
+      margin-bottom: 6px;
+      background: rgba(245, 240, 235, 0.8);
+      border-radius: 4px;
+  }
+  .stars {
+      color: #b8860b;
+      margin-right: 8px;
+  }
+  .content {
+      flex: 1;
+      background: var(--bg-content);
+  }
+  .quote-banner {
+      margin-bottom: 40px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px var(--shadow);
+  }
+  .quote-banner-header {
+      background: var(--accent-brown);
+      color: var(--text-light);
+      padding: 20px;
+      text-align: center;
+  }
+  .quote-banner-header h2 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.4rem;
+  }
+  .quote-section {
+      padding: 30px;
+      text-align: center;
+      background: rgba(245, 240, 235, 0.9);
+  }
+  .quote {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.8rem;
+      font-style: italic;
+      margin-bottom: 15px;
+      color: var(--accent-brown);
+  }
+  .quote-author {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.1rem;
+      color: #5d2914;
+  }
+  .spotify-banner {
+      margin-bottom: 40px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px var(--shadow);
+  }
+  .spotify-banner-header {
+   background: var(--accent-brown);
+   color: var(--text-light);
+   padding: 20px;
+   text-align: center;
+}
+.spotify-banner-header h2 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 1.4rem;
+
+}
+.spotify-section {
+  padding: 20px;
+}
+.spotify-section iframe {
+  width: 100%;
+  height: 170px;
+  border: none;
+  border-radius: 8px;
+}
+.master-list-banner {
+  margin-top: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px var(--shadow);
+}
+.master-list-banner-header {
+  background: var(--accent-brown);
+  color: var(--text-light);
+  padding: 30px;
+  text-align: center;
+}
+.master-list-banner-header h2 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 2rem;
+}
+.master-list-banner-header p {
+  opacity: 0.9;
+  font-style: italic;
+}
+.master-list {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-sidebar);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow-x: auto;
+}
+.book-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.book-table thead th {
+  background: var(--accent-brown);
+  color: var(--text-light);
+  padding: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+}
+.book-table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+.book-table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+.book-table tbody td {
+  background: var(--text-light);
+  padding: 12px;
+  border: none;
+  vertical-align: middle;
+  transition: background 0.2s, transform 0.2s;
+}
+.book-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.book-table tbody tr:hover td {
+  background: var(--bg-content);
+  transform: translateY(-2px);
+}
+.reading-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.reading-status.finished {
+  background: #f8aad6;
+  color: #3d2914;
+}
+.reading-status.unfinished {
+  background: lightskyblue;
+  color: #3d2914;
+}
+.reading-status.to-be-read {
+  background: #fff7c2;
+  color: #3d2914;
+}
+.reading-status.unreleased {
+  background: #90a4ae;
+  color: var(--text-light);
+}
+.book-type {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+.book-type.shared-universe {
+  color: #3d2914;
+  align-content: center;
+}
+.book-type.series {
+  color: #3d2914;
+}
+.book-table .tag {
+  display: inline-block;
+  background-color: #fef2da;
+  color: #3d2914;
+  padding: 4px 10px;
+  margin: 4px 6px 4px 0;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.book-table .tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.book-table th,
+.book-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(210, 180, 140, 0.3);
+}
+.book-table th {
+  background: rgba(230, 220, 210, 0.9);
+  font-weight: bold;
+}
+.daily-pick-card {
+  perspective: 800px;
+  width: 200px;
+  height: 300px;
+  margin: 100% auto 24px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.daily-pick-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+
+}
+.card-front {
+  background: #fff;
+  text-align: center;
+}
+.card-front img {
+  width: 60%;
+  height: 70%;
+  object-fit: cover;
+  overflow: visible;
+}
+.card-front h4 {
+  margin: 8px 0;
+  font-family: 'UnifrakturMaguntia', cursive;
+  color: #8b4513;
+}
+.card-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: 'UnifrakturMaguntia', cursive;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+}
+.sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+}

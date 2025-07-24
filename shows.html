@@ -19,7 +19,6 @@
         }
 
         .header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%23800000" width="1200" height="300"/></svg>');
             background-size: cover;
             height: 300px;
             display: flex;
@@ -177,6 +176,8 @@
             position: relative;
         }
 
+
+        /* card moves up when mouse hover over */
         .show-card:hover, .added-show-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
@@ -237,6 +238,7 @@
             font-style: italic;
         }
 
+        /*cleaner way of including images rather than putting everything in HTML*/
         .vikings { 
             background-image: url('vikings.jpeg'); 
         }
@@ -677,16 +679,19 @@
             '2': { stars: '★★☆☆☆', text: 'struggled' }
         };
 
+        //show modal for adding a show
         addShowBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); //prevents submitting form and reloading page (default behavior)
             modal.style.display = 'block';
         });
-
+        
+        //close modal for adding a show
         closeBtn.addEventListener('click', () => {
             modal.style.display = 'none';
             addShowForm.reset();
         });
 
+        //exit modal through clicking outside the modal
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
@@ -694,6 +699,7 @@
             }
         });
 
+        //take show values and make sure name and rating isn't empty
         addShowForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -717,6 +723,7 @@
             }
         });
 
+        //add show card in 'my shows' section
         function renderShows() {
             showsGallery.innerHTML = '';
 
@@ -745,6 +752,7 @@
             });
         }
 
+        //search functionality with the help of AI for "my shows"
         myShowsSearch.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             const addedShowCards = document.querySelectorAll('.added-show-card');
@@ -759,22 +767,7 @@
             });
         });
 
-        showCards.forEach(card => {
-            card.addEventListener('click', () => {
-                card.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    card.style.transform = 'translateY(-5px)';
-                }, 150);
-            });
-        });
-
-        sidebarItems.forEach(item => {
-            item.addEventListener('click', () => {
-                sidebarItems.forEach(i => i.style.background = '');
-                item.style.background = '#f0f0f0';
-            });
-        });
-
+        //activates one button at a time for th gallery listing style
         viewBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 viewBtns.forEach(b => b.classList.remove('active'));
@@ -782,6 +775,7 @@
             });
         });
 
+        //search for "currently watching"
         const searchBox = document.querySelector('.search-box');
         searchBox.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();

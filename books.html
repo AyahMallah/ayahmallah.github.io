@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Bookshelf</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+    <img src="header.gif" alt="Header Visual" class="header-img">
+    <img src="bookgif.gif" alt="Book Icon" class="gif-icon gif-icon--book">
+</header>
+
+<div class="main-container">
+    <aside class="sidebar" id="shelf">
+      <h1>BookShelf</h1>
+
+      <div class="sidebar-section">
+        <h3>📚 <a href="#master-list">Master List</a></h3>
+    </div>
+
+    <div class="sidebar-section">
+      
+        <ul>
+          <li onclick="window.location.href='home.html'">Home</li>
+          <li onclick="window.location.href='anime.html'">Anime</li>
+          <li onclick="window.location.href='shows.html'">Shows</li>
+          <li onclick="window.location.href='movies.html'">Movies</li>
+          <li onclick="window.location.href='museum.html'">Museum</li>
+      </ul>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Quick Actions</h3>
+    <ul>
+      <li>❤ Add Book</li>
+      <li>✏️ Add Quote</li>
+  </ul>
+</div>
+
+<div class="sidebar-section">
+    <h3>Rating System</h3>
+    <div class="rating-system">
+      <div><span class="stars">★★★★★</span>: sobbed/loved</div>
+      <div><span class="stars">★★★★☆</span>: so good</div>
+      <div><span class="stars">★★★☆☆</span>: it’s okay</div>
+      <div><span class="stars">★★☆☆☆</span>: struggled</div>
+      <div><span class="stars">★☆☆☆☆</span>: never again</div>
+  </div>
+  <div class="daily-pick-card">
+    <div class="card-inner">
+      <div class="card-front">
+
+      </div>
+  </div>
+</div>
+
+</div>
+</aside>
+
+<main class="content">
+
+  <div class="quote-banner" id="quotes">
+    <div class="quote-banner-header">
+      <h2>Featured Quote</h2>
+  </div>
+  <section class="quote-section">
+      <div class="quote" id="quote-text">"Destruction isn't an end, it's a beginning"</div>
+      <div class="quote-author" id="quote-author">- Kallum Locr</div>
+  </section>
+</div>
+
+<div class="spotify-banner" id="playlist">
+    <div class="spotify-banner-header">
+      <h2>🎵 Current Reading Playlist</h2>
+  </div>
+  <section class="spotify-section">
+      <iframe
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+      loading="lazy">
+  </iframe>
+</section>
+</div>
+
+<div class="master-list-banner" id="master-list">
+    <div class="master-list-banner-header">
+      <h2>📖 Master List</h2>
+      <p>Complete collection of books with ratings and status</p>
+  </div>
+  <section class="master-list">
+    <table class="book-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Book Type</th>
+                <th>Series</th>
+                <th>Reading Status</th>
+                <th>Rating</th>
+                <th>Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="book-title">The Sweetest Oblivion</td>
+                <td class="book-author">Danielle Lori</td>
+                <td><span class="book-type shared-universe">Shared Universe</span></td>
+                <td>The Made Men</td>
+                <td><span class="reading-status finished">Finished</span></td>
+                <td class="rating">5/5</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Italian Mafia</span>
+                        <span class="tag">Arranged Marriage</span>
+                        <span class="tag">Contemporary</span>
+                        <span class="tag">Dark Romance</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">The Maddest Obsession</td>
+                <td class="book-author">Danielle Lori</td>
+                <td><span class="book-type shared-universe">Shared Universe</span></td>
+                <td>The Made Men</td>
+                <td><span class="reading-status finished">Finished</span></td>
+                <td class="rating">5/5</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Italian Mafia</span>
+                        <span class="tag">Contemporary</span>
+                        <span class="tag">Dark Romance</span>
+                        <span class="tag">Russian Mafia</span>
+                        <span class="tag">He's Obsessed</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">The Darkest Temptation</td>
+                <td class="book-author">Danielle Lori</td>
+                <td><span class="book-type shared-universe">Shared Universe</span></td>
+                <td>The Made Men</td>
+                <td><span class="reading-status finished">Finished</span></td>
+                <td class="rating">5/5</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Arranged Marriage</span>
+                        <span class="tag">Contemporary</span>
+                        <span class="tag">Dark Romance</span>
+                        <span class="tag">Russian Mafia</span>
+                        <span class="tag">Abducted</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">The Purest Addiction</td>
+                <td class="book-author">Danielle Lori</td>
+                <td><span class="book-type shared-universe">Shared Universe</span></td>
+                <td>The Made Men</td>
+                <td><span class="reading-status unreleased">Unreleased</span></td>
+                <td class="rating">-</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">UNKNOWN</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">From Blood and Ash</td>
+                <td class="book-author">Jennifer L. Armentrout</td>
+                <td><span class="book-type series">Series</span></td>
+                <td>Blood and Ash series</td>
+                <td><span class="reading-status finished">Finished</span></td>
+                <td class="rating">5/5</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Romantasy</span>
+                        <span class="tag">Emotional</span>
+                        <span class="tag">Vampires</span>
+                        <span class="tag">Deception</span>
+                        <span class="tag">Magic</span>
+                        <span class="tag">War/Battles</span>
+                        <span class="tag">Royalty</span>
+                        <span class="tag">Religion</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">Kingdom of Flesh and Fire</td>
+                <td class="book-author">Jennifer L. Armentrout</td>
+                <td><span class="book-type series">Series</span></td>
+                <td>Blood and Ash series</td>
+                <td><span class="reading-status finished">Finished</span></td>
+                <td class="rating">5/5</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Romantasy</span>
+                        <span class="tag">Emotional</span>
+                        <span class="tag">Vampires</span>
+                        <span class="tag">Deception</span>
+                        <span class="tag">Magic</span>
+                        <span class="tag">War/Battles</span>
+                        <span class="tag">Royalty</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">The Crown of Gilded Bones</td>
+                <td class="book-author">Jennifer L. Armentrout</td>
+                <td><span class="book-type series">Series</span></td>
+                <td>Blood and Ash series</td>
+                <td><span class="reading-status to-be-read">To Be Read</span></td>
+                <td class="rating">-</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Romantasy</span>
+                        <span class="tag">Emotional</span>
+                        <span class="tag">Vampires</span>
+                        <span class="tag">Deception</span>
+                        <span class="tag">Magic</span>
+                        <span class="tag">War/Battles</span>
+                        <span class="tag">Royalty</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="book-title">The War of Two Queens</td>
+                <td class="book-author">Jennifer L. Armentrout</td>
+                <td><span class="book-type series">Series</span></td>
+                <td>Blood and Ash series</td>
+                <td><span class="reading-status to-be-read">To Be Read</span></td>
+                <td class="rating">-</td>
+                <td>
+                    <div class="tags">
+                        <span class="tag">Romantasy</span>
+                        <span class="tag">Emotional</span>
+                        <span class="tag">Vampires</span>
+                        <span class="tag">Deception</span>
+                        <span class="tag">Magic</span>
+                        <span class="tag">War/Battles</span>
+                        <span class="tag">Royalty</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+</div>
+</main>
+</div>
+
+<script>
+
+    const quotes = [
+      { text: "Destruction isn't an end, it's a beginning", author: "Kallum Locr" },
+      { text: "From blood and ash, we will rise", author: "Jennifer L. Armentrout" },
+      { text: "There is some good in this world, and it’s worth fighting for", author: " J.R.R. Tolkien" },
+      { text: "Beware; for I am fearless, and therefore powerful.", author: "Mary Shelley" },
+      { text: "We accept the love we think we deserve.", author: " Stephen Chbosky" },
+      { text: "I am not afraid of storms, for I am learning how to sail my ship", author: "Louisa May Alcott" }
+  ];
+  let idx = 0;
+  function changeQuote() {
+      idx = (idx + 1) % quotes.length;
+      const q = document.getElementById('quote-text');
+      const a = document.getElementById('quote-author');
+      q.style.opacity = '0'; a.style.opacity = '0';
+      setTimeout(() => {
+        q.textContent = `"${quotes[idx].text}"`;
+        a.textContent = `- ${quotes[idx].author}`;
+        q.style.opacity = '1'; a.style.opacity = '1';
+    }, 500);
+  }
+  setInterval(changeQuote, 8000);
+  document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.onclick = e => {
+          e.preventDefault();
+          document.getElementById(link.getAttribute('href').slice(1))
+          .scrollIntoView({ behavior: 'smooth' });
+      };
+  });
+      document.getElementById('quote-text').style.transition = 'opacity .5s';
+      document.getElementById('quote-author').style.transition = 'opacity .5s';
+  });
+</script>
+</body>
+</html>
