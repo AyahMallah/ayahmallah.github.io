@@ -39,7 +39,9 @@ h1 {
 }
 
 .column {
-  flex: 1;
+  flex: 2;
+  padding: 20px;
+  text-align: center;
 }
 
 .column-left {
@@ -159,12 +161,15 @@ h1 {
   font-family: 'UnifrakturMaguntia';
   font-size: 1.8rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .anime-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
+  max-width: 100%;
 }
 
 .anime-box {
