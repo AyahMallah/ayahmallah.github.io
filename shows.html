@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entertainment Tracker</title>
+    <title>Show Tracker</title>
     <style>
         * {
             margin: 0;
@@ -33,6 +33,15 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
+        }
+
+        .page-title {
+            text-align: left;
+            font-family: 'UnifrakturMaguntia';
+            font-size: 60px;
+            padding-left: 70px;
+            color: #8B4513;
+            margin: 40px 0;
         }
 
         .container {
@@ -81,7 +90,6 @@
         }
 
         .sidebar li::before {
-            content: '📺';
             margin-right: 8px;
         }
 
@@ -191,10 +199,10 @@
         .show-title {
             padding: 15px;
             font-weight: bold;
-            text-align: center;
+            text-align: left;
             background: #8B4513;
             color: white;
-            font-size: 0.9rem;
+            font-size: 10px;
         }
 
         .added-show-info {
@@ -480,6 +488,10 @@
                 grid-template-columns: repeat(3, 1fr);
                 max-width: 660px;
             }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -493,6 +505,11 @@
                 gap: 15px;
                 max-width: 440px;
             }
+
+            .page-title {
+                font-size: 2rem;
+                margin: 30px 0;
+            }     
         }
     </style>
 </head>
@@ -500,6 +517,8 @@
     <div class="header">
         <img src="supernatural.gif" alt="Entertainment Header" class="header-image">
     </div>
+
+    <h1 class="page-title">shows</h1>
 
     <div id="addShowModal" class="modal">
         <div class="modal-content">
@@ -536,6 +555,7 @@
             <div class="content-section">
                 <h3 style="font-family: 'UnifrakturMaguntia';">Content</h3>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li class="shows">Currently Watching</li>
                     <li>My Shows</li>
                     <li class="month">Man of the Month</li>

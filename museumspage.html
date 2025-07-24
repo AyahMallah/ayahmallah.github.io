@@ -1,215 +1,245 @@
 <!DOCTYPE html>
-<html>
-
-<img src="museumhall.gif" alt="Museum hallway with rotating art frames." width="2000">
-
-<h1 style="text-indent: 30px;font-size: 40px;"> <b> Museums & Galleries </b></h1>
-
+<html lang="en">
 <head>
-    <title>Museum Gallery</title>
-    <style>
-        .filters {
-            text-align: center;
-            margin: 20px auto;
-            max-width: 900px;
-        }
-        
-        .filters button {
-            background: #cccccc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        
-        .filters button:hover {
-            background: #bbbbbb;
-        }
-        
-        .filters button.active {
-            background: #aaaaaa;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin: 50px auto;
-        }
-        
-        .picture {
-            width: 100%;
-            height: 200px;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .name {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            opacity: 0;
-        }
-        
-        .picture:hover .name {
-            opacity: 0.8;
-        }
-        
-        .info {
-            display: none;
-            position: fixed;
-            top: 50px;
-            left: 50px;
-            background: white;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-    </style>
-</head>
-<body>
-    <div class="filters">
-        <button onclick="sortBy('original')" class="active" id="original-btn">Original Order</button>
-        <button onclick="sortBy('alphabetical')" id="alphabetical-btn">Alphabetical</button>
-        <button onclick="sortBy('country')" id="country-btn">By Country</button>
-    </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Museum Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff9f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
 
-    <div class="gallery" id="gallery">
-        <div class="picture" data-name="The Louvre" data-country="France" onclick="showInfo('louvre')">
-            <img src="louvrepicture.jpg" alt="The Louvre">
-            <div class="name">The Louvre</div>
+    h1 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 3rem;
+      text-align: center;
+      color: #891715;
+      margin-top: 20px;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .left-sidebar {
+      width: 200px;
+      background: #fce8d5;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      height: fit-content;
+    }
+
+    .left-sidebar h3 {
+      font-family: 'UnifrakturMaguntia';
+      color: #891715;
+      margin-top: 0;
+    }
+
+    .left-sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .left-sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .left-sidebar ul li a {
+      text-decoration: none;
+      color: #891715;
+      font-weight: bold;
+    }
+
+    .left-sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: 40px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .filters button {
+      background-color: #f8cba6;
+      color: #891715;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .filters button:hover {
+      background-color: #f4b57d;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 100%;
+      margin: 50px auto;
+    }
+
+    .image-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-card .description {
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .main-content {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .left-sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Museum Gallery</h1>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="left-sidebar">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#louvre-info" onclick="showInfo('louvre')">The Louvre</a></li>
+        <li><a href="#met-info" onclick="showInfo('met')">Met Museum</a></li>
+        <li><a href="#lego-info" onclick="showInfo('lego')">LEGO House</a></li>
+        <li><a href="#moma-info" onclick="showInfo('moma')">MoMA</a></li>
+        <li><a href="#cooper-info" onclick="showInfo('cooper')">Cooper Hewitt</a></li>
+        <li><a href="#cloisters-info" onclick="showInfo('cloisters')">The Cloisters</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="filters">
+        <button onclick="filterImages('all')">All</button>
+        <button onclick="filterImages('art')">Art</button>
+        <button onclick="filterImages('design')">Design</button>
+        <button onclick="filterImages('interactive')">Interactive</button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <!-- Example Cards -->
+        <div class="image-card art" id="louvre-info">
+          <img src="louvre.jpg" alt="The Louvre" />
+          <div class="description">
+            <h3>The Louvre</h3>
+            <p>Iconic Parisian museum housing famous art like the Mona Lisa.</p>
+          </div>
         </div>
-        
-        <div class="picture" data-name="Met Museum" data-country="USA" onclick="showInfo('met')">
-            <img src="themet.jpg.avif" alt="The Met Museum">
-            <div class="name">Met Museum</div>
+
+        <div class="image-card art" id="met-info">
+          <img src="met.jpg" alt="Met Museum" />
+          <div class="description">
+            <h3>Met Museum</h3>
+            <p>New York's renowned institution featuring art from around the globe.</p>
+          </div>
         </div>
-        
-        <div class="picture" data-name="LEGO House" data-country="Denmark" onclick="showInfo('lego')">
-            <img src="legohousepicture.jpg">
-            <div class="name">LEGO House</div>
+
+        <div class="image-card interactive" id="lego-info">
+          <img src="lego.jpg" alt="LEGO House" />
+          <div class="description">
+            <h3>LEGO House</h3>
+            <p>A playful, interactive experience built entirely from LEGO bricks.</p>
+          </div>
         </div>
-        
-        <div class="picture" data-name="MoMA" data-country="USA" onclick="showInfo('moma')">
-            <img src="moma.jpg.avif" alt="MoMA">
-            <div class="name">MoMA</div>
+
+        <div class="image-card art" id="moma-info">
+          <img src="moma.jpg" alt="MoMA" />
+          <div class="description">
+            <h3>MoMA</h3>
+            <p>The Museum of Modern Art featuring modern and contemporary art.</p>
+          </div>
         </div>
-        
-        <div class="picture" data-name="Cooper Hewitt Smithsonian Design Museum" data-country="USA" onclick="showInfo('cooper')">
-            <img src="coopermuseum.jpg" alt="Cooper Hewitt Smithsonian Design Museum">
-            <div class="name">Cooper Hewitt Smithsonian Design Museum</div>
+
+        <div class="image-card design" id="cooper-info">
+          <img src="cooper.jpg" alt="Cooper Hewitt Smithsonian" />
+          <div class="description">
+            <h3>Cooper Hewitt</h3>
+            <p>Smithsonian Design Museum in NYC showcasing design innovation.</p>
+          </div>
         </div>
-        
-        <div class="picture" data-name="The Met Cloisters" data-country="USA" onclick="showInfo('cloisters')">
-            <img src="metcloisters.jpg.avif" alt="The Met Cloisters">
-            <div class="name">The Met Cloisters</div>
+
+        <div class="image-card art" id="cloisters-info">
+          <img src="cloisters.jpg" alt="The Cloisters" />
+          <div class="description">
+            <h3>The Cloisters</h3>
+            <p>Branch of the Met devoted to medieval European art and architecture.</p>
+          </div>
         </div>
+      </div>
     </div>
-    
-    <div class="info" id="louvre-info">
-        <h3>The Louvre</h3>
-        <p>Location: Paris, France</p>
-        <p>Website: https://www.louvre.fr/en</p>
-        <button onclick="hideInfo()">Close</button>
-    </div>
-    
-    <div class="info" id="met-info">
-        <h3>Met Museum</h3>
-        <p>Location: New York, USA</p>
-        <p>Website: https://www.metmuseum.org</p>
-        <button onclick="hideInfo()">Close</button>
-    </div>
-    
-    <div class="info" id="lego-info">
-        <h3>LEGO House</h3>
-        <p>Location: Billund, Denmark</p>
-        <p>Website: https://legohouse.com/en-gb/</p>
-        <button onclick="hideInfo()">Close</button>
-    </div>
-    
-    <div class="info" id="moma-info">
-        <h3>MoMA</h3>
-        <p>Location: New York, USA</p>
-        <p>Website: https://www.moma.org</p>
-        <button onclick="hideInfo()">Close</button>
-    </div>
-    
-    <div class="info" id="cloisters-info">
-        <h3>The Met Cloisters</h3>
-        <p>Location: New York, USA</p>
-        <p>Website: https://www.metmuseum.org/plan-your-visit/met-cloisters</p>
-        <button onclick="hideInfo()">Close</button>
-    </div>
-    
-    <div class="info" id="cooper-info">
-        <h3>Cooper Hewitt Smithsonian Design Museum</h3>
-        <p>Location: New York, USA</p>
-        <p>Website: https://www.cooperhewitt.org</p>
-        <button onclick="hideInfo()">Close</button>
-    </div>
-    
-    <script>
-        let originalOrder = [];
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const gallery = document.getElementById('gallery');
-            originalOrder = Array.from(gallery.children);
-        });
-        
-        function sortBy(type) {
-            const gallery = document.getElementById('gallery');
-            const pictures = Array.from(gallery.children);
-            
-            document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
-            
-            let sortedPictures;
-            
-            if (type === 'alphabetical') {
-                sortedPictures = pictures.sort((a, b) => {
-                    return a.dataset.name.localeCompare(b.dataset.name);
-                });
-                document.getElementById('alphabetical-btn').classList.add('active');
-            } else if (type === 'country') {
-                sortedPictures = pictures.sort((a, b) => {
-                    return a.dataset.country.localeCompare(b.dataset.country);
-                });
-                document.getElementById('country-btn').classList.add('active');
-            } else {
-                sortedPictures = [...originalOrder];
-                document.getElementById('original-btn').classList.add('active');
-            }
-            
-            gallery.innerHTML = '';
-            sortedPictures.forEach(picture => gallery.appendChild(picture));
+  </div>
+
+  <script>
+    function filterImages(category) {
+      const cards = document.querySelectorAll('.image-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
         }
-        
-        function showInfo(museum) {
-            const infos = document.querySelectorAll('.info');
-            infos.forEach(info => info.style.display = 'none');
-            document.getElementById(museum + '-info').style.display = 'block';
-        }
-        
-        function hideInfo() {
-            const infos = document.querySelectorAll('.info');
-            infos.forEach(info => info.style.display = 'none');
-        }
-    </script>
+      });
+    }
+
+    function showInfo(id) {
+      const section = document.getElementById(id + '-info');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
 </body>
 </html>
-
