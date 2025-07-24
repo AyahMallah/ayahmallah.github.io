@@ -56,6 +56,27 @@
     function showDetails(title, description) {
         alert(title + "\n\n" + description);
     }
+    function editQuote() {
+      const box = document.getElementById("quote-box");
+      const input = document.createElement("input");
+      input.type = "text";
+      input.value = box.innerText.replace(/"/g, '');
+      input.className = "quote-input";
+
+      box.replaceWith(input);
+      input.focus();
+
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          const newBox = document.createElement("div");
+          newBox.id = "quote-box";
+          newBox.className = "quote-box";
+          newBox.innerText = `"${input.value}"`;
+          newBox.onclick = editQuote;
+          input.replaceWith(newBox);
+        }
+      });
+}
     </script>
 
     <h2 class="orange-header">Want to Watch</h2>
